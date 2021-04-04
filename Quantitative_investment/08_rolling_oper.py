@@ -9,4 +9,6 @@ df['price'] = [1,2,3,4,5]
 
 df['收盘价_3'] = df['price'].rolling(3).mean()
 df['收盘价_3'] = df['price'].rolling(3).max()
+
+df['price_mean'] = df['price'].expanding.mean()
 print(df)
