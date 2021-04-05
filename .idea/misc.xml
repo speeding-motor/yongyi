@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ProjectPlainTextFileTypeManager">
-    <file url="file://$PROJECT_DIR$/Quantitative_investment/3_转换数据周期resample.py" />
+    <file url="file://$PROJECT_DIR$/simple_strategy/data/sh600001.csv" />
+    <file url="file://$PROJECT_DIR$/simple_strategy/data/sh600004.csv" />
+    <file url="file://$PROJECT_DIR$/simple_strategy/data/sz000001.csv" />
+    <file url="file://$PROJECT_DIR$/simple_strategy/data/sz300765.csv" />
+    <file url="file://$PROJECT_DIR$/simple_strategy/data/sz300766.csv" />
   </component>
   <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.9" project-jdk-type="Python SDK" />
 </project>
