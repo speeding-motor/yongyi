@@ -5,7 +5,7 @@ import pandas as pd
 import numpy as np
 import os
 import io
-from toos import DATA_DIR
+from tools import DATA_DIR
 
 """
 根据股价移动平均线来确定，购买、卖出信号:
@@ -63,7 +63,7 @@ def __handle_data(data):
 
         df_all = df_all.append(group)
 
-    df_all.to_csv('all_data.csv')
+    df_all.to_csv('all_data_strategy.csv', index=False)
 
 
 if __name__ == "__main__":
