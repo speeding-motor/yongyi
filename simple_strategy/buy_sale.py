@@ -16,7 +16,7 @@ import tools
 
 def handle_data():
     df = pd.read_csv('all_data_strategy.csv', encoding='utf-8', nrows=1000, skip_blank_lines=True, error_bad_lines=True)
-    df.drop(columns=["开盘价", "最高价", "最低价", "成交量", "成交额", "daily_rise_fall", "recovery_factor"],
+    df.drop(columns=["开盘价", "最高价", "最低价", "成交量", "成交额", "daily_rise_fall"],
             inplace=True)
 
     df['涨停价'] = df['前收盘价'] * 1.1
@@ -45,8 +45,9 @@ def handle_data():
                                                                                                   rounding=ROUND_HALF_UP)))
     df['sale_price'] = df['收盘价'].apply(lambda x: float(Decimal(str(x - tools.SLIP_POINT)).quantize(Decimal('0.01'),
                                                                                                    rounding=ROUND_HALF_UP)))
+    df['buy_price'] = df['buy_price'].shift(1)
+    df['sale_price'] = df['sale_price'].shift(1)
 
-    # df['buy_price'] = df['buy_price'].shift(1) + toos.SLIP_POINT
     df.to_csv('all_data_buy_sale.csv', index=False)
 
 

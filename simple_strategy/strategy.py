@@ -17,8 +17,8 @@ from tools import DATA_DIR
 
 """
 
-short_time_quantum = 5
-long_time_quantum = 30
+short_time_quantum = 30
+long_time_quantum = 120
 
 pd.set_option('display.max_colwidth', 5000)
 pd.set_option('display.expand_frame_repr', False)
