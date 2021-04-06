@@ -5,8 +5,12 @@ import pandas as pd
 import numpy as np
 from decimal import Decimal, ROUND_HALF_UP, ROUND_FLOOR
 
+df = pd.DataFrame({'a':[1,2], 'b':[2,3]})
+print(df)
 
-s = pd.Series([1,2,3,4,6])
-print(s , "...")
 
-print(s.iloc[-1])
+a = df['a'].iloc[-1]
+print(a)
+
+df['a'].iloc[-1] = df['a'].iloc[-1] + 100
+print(df)

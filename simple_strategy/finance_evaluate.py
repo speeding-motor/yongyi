@@ -81,7 +81,7 @@ def __evaluate_profit_for_one_transaction(group, money):
     # 卖出，可能会产生除权操作，股票数增多，股票价值涨跌幅度 = 收盘价复权价格的涨跌幅度
     # share_value = 最新股票市值 - 印花税
     recovery_factor = group['recovery_factor'].apply(lambda x: float(x))
-    share_value = (recovery_factor / recovery_factor.iloc[0] * share_value) * (1 - tools.TAX_RATE)
+    share_value = (recovery_factor / recovery_factor.iloc[0] * share_value)
 
     money = share_value + remain_cash
 
@@ -89,6 +89,10 @@ def __evaluate_profit_for_one_transaction(group, money):
     group['share_value'] = share_value
     group['remain_cash'] = remain_cash
     group['money'] = money
+
+    # 最后卖出时，需要根据
+    tax_cost = group['share_value'].iloc[-1] * tools.TAX_RATE  # 印花税
+    group['money'].iloc[-1] = group['money'].iloc[-1] - tax_cost
 
     return money.iloc[-1]
 
