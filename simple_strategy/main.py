@@ -1,6 +1,10 @@
 # coding=utf-8
 # @Author : AYY
 
+import buy_sale
+import finance_evaluate
+import strategy
+
 '''
     简单的股票量化投资模型，主要功能有：
 
@@ -12,7 +16,9 @@
 
 
 def main():
-    pass
+    strategy.main()
+    buy_sale.handle_data()
+    finance_evaluate.evaluate_profit()
 
 
 if __name__ == "__main__":

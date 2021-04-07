@@ -66,6 +66,11 @@ def __handle_data(data):
     df_all.to_csv('all_data_strategy.csv', index=False)
 
 
+def main():
+    data = __read_data()
+    __handle_data(data)
+
+
 if __name__ == "__main__":
     data = __read_data()
     __handle_data(data)
