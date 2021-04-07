@@ -15,7 +15,7 @@ import tools
 
 
 def handle_data():
-    df = pd.read_csv('all_data_strategy.csv', encoding='utf-8', nrows=1000, skip_blank_lines=True, error_bad_lines=True)
+    df = pd.read_csv('all_data_strategy.csv', encoding='utf-8', skip_blank_lines=True, error_bad_lines=True)
     df.drop(columns=["开盘价", "最高价", "最低价", "成交量", "成交额", "daily_rise_fall"],
             inplace=True)
 

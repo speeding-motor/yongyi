@@ -45,6 +45,9 @@ def __handle_data(data):
     股票会有配股、分送操作，所以需要进行对价格进行复权操作,复权价=
     均价 = sum{复权价}/time_gap
     """
+    stop_time = '2018/1/1'
+    data = data.loc[pd.to_datetime(data['交易日期']) > stop_time]
+
     df_all = pd.DataFrame()
     for name, group in data.groupby('股票代码'):
         group.sort_values(by='交易日期', axis=0, inplace=True, ascending=True, ignore_index=True)

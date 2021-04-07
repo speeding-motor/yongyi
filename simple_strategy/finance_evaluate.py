@@ -24,7 +24,7 @@ def evaluate_profit():
     1、确定买入时间点()、每次买入时，记录持仓时间 pos_time
     """
     global initial_finance
-    df = pd.read_csv('all_data_buy_sale.csv', encoding='utf-8', error_bad_lines=True)
+    df = pd.read_csv('../all_data_buy_sale.csv', encoding='utf-8', error_bad_lines=True)
     pos_condiction = df['pos'] == 1.0
     pos_condiction_shift1 = df['pos'].shift(1).apply(lambda x: not x)
 
